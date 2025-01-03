@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .custom-kariyer-icon {
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+  }
+
+  .custom-leet-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+  }
+
+  .slider {
+    padding-block: 12px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    mask-image: linear-gradient(to right, transparent 20% 80%, #000, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, #000, transparent);
+
+  }
+
+  .clients-list {
+    display: flex;
+    width: calc(var(--width) * var(--imageQuantity) * 2);
+    gap: calc(var(--width) / 4);
+    overflow: hidden;
+  }
+
+  .clients-list:hover {
+    animation-play-state: paused !important;
+  }
+
+  .clients-item {
+    width: var(--width);
+    height: var(--height);
+    flex-shrink: 0;
+  }
+
+  .clients-item img {
+    width: 100%;
+    height: 100%;
+    transition: filter 0.5s ease-in-out;
+    font-size: 100px;
+    color: #ffdb70;
+    animation: autoScroll 20s linear infinite;
+  }
+
+
+
+  .text-wrapper {
+    margin-top: 10px;
+    /* Başlık ile metin arasına boşluk eklemek için */
+  }
+
+  .description {
+    color: #fc8f00;
+    font-size: 8px;
+  }
+
+  @keyframes autoScroll {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(calc(-1 * var(--width) * var(--imageQuantity)));
+    }
+  }
+
+  .slider[reverse="true"] .clients-item {
+    animation: reverseScroll 20s linear infinite;
+  }
+
+
+  @keyframes reverseScroll {
+    0% {
+      transform: translateX(calc(-1 * var(--width) * var(--imageQuantity)));
+    }
+
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+
+  .slider:hover .clients-item img {
+    filter: grayscale(1);
+  }
+
+  .slider .clients-item:hover img {
+    filter: grayscale(0);
+  }
+
+  .button {
+    background-color: #282829;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.button:hover {
+    background-color: #ffdb70;
+}
+
+.imgs {
+  background-color: #282829;
+  color: white;
+  border: none;
+  padding: 2px 2px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: auto
+}
